@@ -90,17 +90,17 @@ class MazeSolver {
         String[][] output = new String[maze.getHeight()][maze.getWidth()];
 
         for (Position position : maze.getWalls()) {
-            output[position.getY()][position.getX()] = "1 ";
+            output[position.getY()][position.getX()] = "#";
         }
         for (Position solutionPosition : solutionPositions) {
-            output[solutionPosition.getY()][solutionPosition.getX()] = "X ";
+            output[solutionPosition.getY()][solutionPosition.getX()] = "X";
         }
-        output[maze.getStart().getY()][maze.getStart().getX()] = "S ";
-        output[maze.getEnd().getY()][maze.getEnd().getX()] = "E ";
+        output[maze.getStart().getY()][maze.getStart().getX()] = "S";
+        output[maze.getEnd().getY()][maze.getEnd().getX()] = "E";
 
         for (String[] strings : output) {
             for (String string : strings) {
-                System.out.print(string != null ? string : "  ");
+                System.out.print(string != null ? string : " ");
             }
             System.out.println();
         }
